@@ -74,7 +74,7 @@ window.__h82AlnkH6D91__("WyJwdWItMjIyODQ0MjcyNzk5MTY4MSIsW251bGwsbnVsbCxudWxsLCJ
             --black-color: #fff;
         }
 
-        [data-theme="light"] {
+        [data-theme="lighter"] {
             --background: #edeff2;
             --chat-back: #fff;
             --main-back: #f6f6f6;
@@ -3224,7 +3224,7 @@ window.__h82AlnkH6D91__("WyJwdWItMjIyODQ0MjcyNzk5MTY4MSIsW251bGwsbnVsbCxudWxsLCJ
             let isOnline = existVoice >= 2;
             let voicesEle = document.getElementById("preSetSpeech");
             // 支持中文和英文
-            voices = isOnline ? voices.filter(item => item.Locale.match(/^(zh-|en-)/)) : voices.filter(item => item.lang.match(/^(zh-|en-)/));
+            voices = isOnline ? voices.filter(item => item.Locale.match(/^(ru-|en-)/)) : voices.filter(item => item.lang.match(/^(ru-|en-)/));
             if (isOnline) {
                 voices.map(item => {
                     item.name = item.FriendlyName || (`${item.DisplayName} Online (${item.VoiceType}) - ${item.LocaleName}`);
@@ -3233,8 +3233,8 @@ window.__h82AlnkH6D91__("WyJwdWItMjIyODQ0MjcyNzk5MTY4MSIsW251bGwsbnVsbCxudWxsLCJ
             }
             voices.sort((a, b) => {
                 if (a.lang.slice(0, 2) === b.lang.slice(0, 2)) {
-                    if (a.lang.slice(0, 2) === "zh") {
-                        return (a.lang === b.lang) ? 0 : (a.lang > b.lang) ? 1 : -1; // zh-CN 在前
+                    if (a.lang.slice(0, 2) === "ru") {
+                        return (a.lang === b.lang) ? 0 : (a.lang > b.lang) ? 1 : -1; // ru-RU 在前
                     } else {
                         return 0
                     }
